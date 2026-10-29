@@ -1,0 +1,35 @@
+name: Focused proposal
+description: Propose a requirement, integration, process package, or documentation improvement.
+title: "proposal: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and intended outcome
+      description: Describe who needs this and what would improve.
+    validations:
+      required: true
+  - type: input
+    id: requirements
+    attributes:
+      label: Related requirement IDs
+      placeholder: "For example, PP-001 and GO-002"
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed scope and approach
+      description: Include affected components, sources, versions, and dependencies where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Explain how the result can be checked, including representative synthetic data where useful.
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Assumptions and open questions
+      description: Note access rules, compatibility questions, migration concerns, and anything not yet verified.

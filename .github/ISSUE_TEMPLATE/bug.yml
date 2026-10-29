@@ -1,0 +1,23 @@
+name: Bug or documentation error
+description: Report an observed problem with enough evidence to investigate it.
+title: "bug: "
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed problem
+      description: State what happened, what you expected, and whether this affects documentation or implemented code.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction or evidence
+      description: Include exact steps, relevant files or versions, and sanitized output. Do not include secrets or company data.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Environment and affected requirements
+      description: Include source versions and requirement IDs when known. Do not claim a test ran unless you ran it.

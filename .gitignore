@@ -1,0 +1,20 @@
+# Publish only Openflow-owned project files. Upstream checkouts stay independent.
+/*
+!/.gitignore
+!/README.md
+!/REQUIREMENTS.md
+!/CONTRIBUTING.md
+!/AGENTS.md
+!/docs/
+!/docs/**
+!/.github/
+!/.github/**
+!/openflow.code-workspace
+
+# Local configuration, secrets, generated files and tooling state.
+.env
+.env.*
+!.env.example
+**/__pycache__/
+**/.DS_Store
+**/node_modules/

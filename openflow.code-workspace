@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "Openflow - source and integrations"
+    }
+  ],
+  "settings": {
+    "git.autoRepositoryDetection": "subFolders",
+    "git.repositoryScanMaxDepth": 7,
+    "search.exclude": {
+      "**/.git": true
+    }
+  }
+}
