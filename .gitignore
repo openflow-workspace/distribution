@@ -10,6 +10,8 @@
 !/.github/
 !/.github/**
 !/openflow.code-workspace
+!/okf/
+!/okf/**
 
 # Local configuration, secrets, generated files and tooling state.
 .env
