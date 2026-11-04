@@ -5,12 +5,14 @@ description: Integrate ericerkz/kept into openDesk as a quick-notes app includin
 resource: https://github.com/ericerkz/kept
 tags: [opendesk, notes, sharing]
 status: draft
-generated: { by: process:issue-migration, at: 2026-11-03T13:00:00Z }
+generated: { by: process:handoff-import, at: 2026-11-04T09:00:00Z }
 sources:
   - id: issue-1
     resource: https://github.com/openflow-workspace/distribution/issues/1
     title: "Integrate Kept as quick-notes app with sharing into openDesk (closed, moved to OKF)"
 ---
+
+Tracked as requirements NOTE-001 to NOTE-004 in [REQUIREMENTS.md](../../REQUIREMENTS.md); status and open points in [application-modules.md](../../docs/application-modules.md).
 
 # Goal
 

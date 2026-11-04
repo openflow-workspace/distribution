@@ -17,11 +17,30 @@ The product is intended as an open-source alternative to common paid enterprise 
 | ID | Requirement |
 |---|---|
 | OF-001 | Use a pinned openDesk release as the collaboration baseline and preserve a repeatable path for upstream updates. |
-| OF-002 | Include independently selectable modules for Discourse, ERPNext/Frappe, Superset, Airflow, and the lakehouse. |
+| OF-002 | Include independently selectable modules for Discourse, ERPNext/Frappe, Superset, Airflow, and the lakehouse. Optional application modules (quick notes, ticketing, development platform) are defined under "Application modules" below. |
 | OF-003 | Provide shared login and portal navigation through the openDesk identity/portal stack, with explicit application role mappings and account lifecycle rules. |
 | OF-004 | Keep Openflow-owned configuration, extensions, process packages, and patches separate from upstream source. |
 | OF-005 | Author all Openflow-owned repository content and contribution materials in English. Preserve upstream identifiers, licenses, attribution, and third-party content. |
 | OF-006 | Publish requirements, contribution instructions, compatibility information, release notes, and upgrade instructions under `openflow-workspace`. |
+
+### Application modules
+
+Proposed requirements. No module in this subsection is implemented or verified in this repository. Discourse is the first application integration to implement; ticketing and the development platform follow after it.
+
+| ID | Requirement |
+|---|---|
+| DISC-001 | Deploy Discourse as a selectable module and sign users in through the openDesk identity stack (Keycloak/OIDC). Login MUST be tested in an openDesk environment. |
+| DISC-002 | Provide a working Discourse entry in the openDesk portal navigation. |
+| DISC-003 | Map openDesk roles/groups to Discourse permissions explicitly and verify that users receive only the intended access, including account disablement (IG-001). |
+| NOTE-001 | Provide [Kept](https://github.com/ericerkz/kept) as an optional, independently selectable quick-notes module. |
+| NOTE-002 | Sign in to the notes module through the openDesk identity stack and provide a portal entry. The ingress configuration MUST support the WebSocket connections the application needs. |
+| NOTE-003 | Allow users to share notes with other users. |
+| NOTE-004 | Before selecting Kept, verify and record its license, maintenance status, OIDC/SSO support, and sharing model. |
+| TKT-001 | Provide an optional ticketing module, which can be switched off, for internal IT support. |
+| TKT-002 | Support in the same module, or an equivalent switchable one, external requests from customers, partners, or suppliers. |
+| DEV-001 | Provide an optional development platform for Git hosting and code review. |
+
+Ticketing and the development platform are documented for later work. The ticketing product is not selected: candidates are to be compared later against both workflow types (internal support and external requests). For DEV-001, Gitea and Forgejo are candidates for self-hosting. Codeberg is noted separately as a hosted option for public project collaboration, not as a replacement for a self-hosted platform. See [docs/application-modules.md](docs/application-modules.md) for status and open points.
 
 Openflow-owned files belong in this repository or dedicated integration repositories when independently releasable. Upstream applications remain upstream dependencies. Secrets, private company data, and environment-specific configuration MUST NOT be published with the distribution.
 
@@ -182,6 +201,9 @@ These are acceptance criteria to implement and run, not completed checks. Full s
 ## 11. Decisions still required
 
 - Exact compatible release pins and CPU/platform support for all components.
+- Ticketing product, evaluated against both workflow types (internal IT support and external requests), and whether one module serves TKT-001 and TKT-002.
+- Self-hosted development platform (Gitea or Forgejo) and the role of Codeberg for public collaboration.
+- Kept image selection, deployment, and suitability (NOTE-004), including how its SQLite storage is covered by backup and restore (OPS-004).
 - S3 implementation and deployment topology; retention and recovery objectives.
 - pg_ducklake SQL behavior, access enforcement, catalog layout, and tested Superset connectivity.
 - Connector scope, extraction strategy, deletion semantics, and historical-data availability per source version.

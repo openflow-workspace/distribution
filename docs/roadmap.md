@@ -16,9 +16,9 @@ Relevant requirements: OF-001, OF-004, OPS-001, OPS-002, OPS-003, OPS-007.
 
 ## M2: Application entry points
 
-Add selectable Discourse, ERPNext, and Superset deployments, shared login, explicit role/account lifecycle mappings, and portal entries. Verify login, navigation, least-privileged access, and account disablement. Add stable cross-application links before considering automated business-object synchronization.
+Add selectable Discourse, ERPNext, and Superset deployments, shared login, explicit role/account lifecycle mappings, and portal entries. Discourse is the first integration to implement: tested login through openDesk, a working portal entry, and verified access rights. The optional Kept notes module follows the same pattern. Verify login, navigation, least-privileged access, and account disablement. Add stable cross-application links before considering automated business-object synchronization.
 
-Relevant requirements: OF-002, OF-003, IG-001, IG-005, IG-006.
+Relevant requirements: OF-002, OF-003, IG-001, IG-005, IG-006, DISC-001 through DISC-003, NOTE-001 through NOTE-004.
 
 ## M3: Data platform compatibility baseline
 
@@ -42,4 +42,4 @@ Relevant requirements: PP-002, PP-003, OPS-001 through OPS-007.
 
 ## Later candidates
 
-Optional aggregate collaboration/community analytics, additional ERP processes, narrowly scoped APIs/events between applications, and CDC where its operational cost is justified. These require their own scope and acceptance criteria rather than being implicit requirements of the first release.
+An optional ticketing module (TKT-001, TKT-002) and an optional development platform for Git and code review (DEV-001), both after the Discourse integration; neither product is selected. Optional aggregate collaboration/community analytics, additional ERP processes, narrowly scoped APIs/events between applications, and CDC where its operational cost is justified. These require their own scope and acceptance criteria rather than being implicit requirements of the first release.

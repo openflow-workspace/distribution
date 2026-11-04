@@ -24,6 +24,9 @@ The project is hosted in the [openflow-workspace organization](https://github.co
 | Nubus / Keycloak | Shared identity and portal integration, building on the selected openDesk release |
 | Discourse | Discussions and community knowledge |
 | ERPNext / Frappe | Business operations such as customers, sales, purchasing, inventory, and invoicing |
+| Kept (optional) | Quick notes with sharing |
+| Ticketing (optional, product open) | Internal IT support and external requests |
+| Development platform (optional, product open) | Git hosting and code review |
 | Apache Airflow | Scheduled ingestion, transformation, quality checks, and publication |
 | S3-compatible storage | Raw extracts and lakehouse data files |
 | PostgreSQL + pg_ducklake | Lakehouse catalog/query integration and analytical access |
